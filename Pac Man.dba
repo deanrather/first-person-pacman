@@ -1007,7 +1007,7 @@ IF AltCon=3
       ENDIF
    ENDIF
 ENDIF
-   IF AltCon=2
+IF AltCon=2
    IF UPKEY()=1 THEN ManX#=NEWXVALUE(ManX#,ManA#,ManSpeed) : ManZ#=NEWZVALUE(ManZ#,ManA#,ManSpeed)
    IF DOWNKEY()=1 THEN ManX#=NEWXVALUE(ManX#,ManA#,ManSpeed) : ManZ#=NEWZVALUE(ManZ#,ManA#,ManSpeed)
    IF LEFTKEY()=1 THEN ManA#=ManA#-10
@@ -1032,9 +1032,10 @@ IF AltCon=0
       ManA#=WRAPVALUE(ManA#-90)
       LeftUp=0
    ENDIF
+ENDIF
 
    IF RIGHTKEY()=0 THEN RightUp=1
-   IF RIGHTKEY()=1 AND RightUp=1 THEN ManA#=WRAPVALUE(ManA#+90) : RightUp=0 : ENDIF
+   IF RIGHTKEY()=1 AND RightUp=1 THEN ManA#=WRAPVALUE(ManA#+90) : RightUp=0
 
 POSITION OBJECT 5,NEWXVALUE(ManX#,ManA#,30),20,NEWZVALUE(ManZ#,ManA#,30)
 IF OBJECT COLLISION(5,2)>0
